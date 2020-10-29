@@ -142,15 +142,19 @@ button:active {
 
 /*  not supported by Chrome but supported by Safari — so a perfect Safari hack  */
 @supports(font-synthesis: inherit) {
-	/*
-   input::placeholder {
-     line-height:3em
-  }
-*/
-
 	.operator-btn,
 	.equal,
 	.clear {
 		padding-bottom: 10px;
 	}
 }
+
+/* trying is to remove sticky focus buttons on touch screens */
+@media (pointer: coarse) {
+  button:focus {
+	outline: none;
+}
+}
+
+
+
