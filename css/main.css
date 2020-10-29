@@ -80,10 +80,6 @@ button {
 	box-shadow: 5px 5px rgba(0 0 0 / 20%);
 }
 
-.operator-btn,
-.equal,
-.clear {}
-
 button:focus {
 	outline: none;
 	background: var(--gradient-bg);
@@ -139,7 +135,6 @@ button:active {
 	}
 }
 
-
 /*  not supported by Chrome but supported by Safari — so a perfect Safari hack  */
 @supports(font-synthesis: inherit) {
 	.operator-btn,
@@ -148,13 +143,3 @@ button:active {
 		padding-bottom: 10px;
 	}
 }
-
-/* trying is to remove sticky focus buttons on touch screens */
-@media (pointer: coarse) {
-  button:focus {
-	outline: none;
-}
-}
-
-
-
