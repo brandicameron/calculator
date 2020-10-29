@@ -151,6 +151,6 @@ button:active {
 	.operator-btn,
 	.equal,
 	.clear {
-		padding-bottom: 7px;
+		padding-bottom: 10px;
 	}
 }
