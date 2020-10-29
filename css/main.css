@@ -22,7 +22,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	color: var(--text-color);
-	line-height: 80%;
 }
 
 .calculator {
@@ -63,8 +62,12 @@ body {
 	outline: none;
 }
 
+.buttons-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
 button {
-	border: none;
 	background: var(--background-color);
 	color: var(--text-color);
 	font-size: 2.6rem;
@@ -76,6 +79,10 @@ button {
 	border-radius: 50%;
 	box-shadow: 5px 5px rgba(0 0 0 / 20%);
 }
+
+.operator-btn,
+.equal,
+.clear {}
 
 button:focus {
 	outline: none;
@@ -91,34 +98,6 @@ button:hover {
 button:active {
 	box-shadow: inset 1px 1px 12px rgba(0 0 0 / 90%);
 	transform: scale(.96);
-
-}
-
-@media screen and (max-width: 550px) {
-	button {
-		width: 55px;
-		height: 55px;
-		font-size: 2.5rem;
-		margin: 4px;
-	}
-	
-	.calculator {
-		margin-top: -100px;
-		padding: 40px 20px;
-	}
-}
-
-@media screen and (max-height: 650px) {
-	button {
-		width: 50px;
-		height: 50px;
-		font-size: 2.5rem;
-	}
-}
-
-.buttons-container {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
 }
 
 #clear-btn {
@@ -136,4 +115,42 @@ button:active {
 .is-depressed {
 	background: var(--gradient-bg);
 	color: var(--background-color);
+}
+
+@media screen and (max-width: 550px) {
+	button {
+		width: 55px;
+		height: 55px;
+		font-size: 2.5rem;
+		margin: 4px;
+	}
+
+	.calculator {
+		margin-top: -100px;
+		padding: 40px 20px;
+	}
+}
+
+@media screen and (max-height: 650px) {
+	button {
+		width: 50px;
+		height: 50px;
+		font-size: 2.5rem;
+	}
+}
+
+
+/*  not supported by Chrome but supported by Safari — so a perfect Safari hack  */
+@supports(font-synthesis: inherit) {
+	/*
+   input::placeholder {
+     line-height:3em
+  }
+*/
+
+	.operator-btn,
+	.equal,
+	.clear {
+		padding-bottom: 7px;
+	}
 }
