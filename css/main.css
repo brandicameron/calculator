@@ -52,6 +52,7 @@ body {
 	height: 110px;
 	width: 100%;
 	padding: 0 10px;
+	margin-bottom: 10px;
 	font-size: 5.5rem;
 	text-align: right;
 	border: 3px solid var(--accent-color);
@@ -95,13 +96,15 @@ button:active {
 
 @media screen and (max-width: 550px) {
 	button {
-		width: 50px;
-		height: 50px;
+		width: 55px;
+		height: 55px;
 		font-size: 2.5rem;
+		margin: 4px;
 	}
 	
 	.calculator {
-		margin-top: -80px;
+		margin-top: -100px;
+		padding: 40px 20px;
 	}
 }
 
