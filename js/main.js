@@ -46,9 +46,12 @@ function calculatorFunctions(e) {
 		operatorBtns.forEach((btn) => {
 			btn.classList.remove('is-depressed');
 		});
-		
+
 		//display user input
-		if (display.value === '0' || display.value === firstNumber) {
+		if (e.target.classList.contains('decimal') && display.value === '0' ||
+			 e.target.classList.contains('decimal') && display.value === firstNumber) {
+			display.value = '0' + e.target.textContent;
+		} else if (display.value === '0' || display.value === firstNumber) {
 			display.value = e.target.textContent;
 		} else {
 			display.value = display.value + e.target.textContent;
@@ -66,7 +69,7 @@ function calculatorFunctions(e) {
 	if (e.target.classList.contains('equal')) {
 		secondNumber = display.value;
 		answer = calculate(operator, parseFloat(firstNumber), parseFloat(secondNumber));
-		display.value = answer;
+		display.value = answer.toFixed(2);
 	}
 }
 
