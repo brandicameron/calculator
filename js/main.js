@@ -69,7 +69,7 @@ function calculatorFunctions(e) {
 	if (e.target.classList.contains('equal')) {
 		secondNumber = display.value;
 		answer = calculate(operator, parseFloat(firstNumber), parseFloat(secondNumber));
-		display.value = answer.toFixed(2);
+		display.value = answer;
 	}
 }
 
