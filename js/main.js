@@ -2,10 +2,23 @@ const buttons = document.querySelector('.buttons-container');
 const clearBtn = document.getElementById('clear-btn');
 const operatorBtns = document.querySelectorAll('.operator-btn');
 let display = document.querySelector('.display');
+let changeDesignBtn = document.getElementById('change-btn');
 let firstNumber;
 let operator;
 let secondNumber;
 let answer;
+
+
+changeDesignBtn.addEventListener('click', () => {
+	let stylesheet = document.getElementById('stylesheet');
+
+	if (stylesheet.href.includes('main')) {
+		stylesheet.href = "css/neo.css";
+	} else {
+		stylesheet.href = "css/main.css";
+	}
+});
+
 
 
 const add = (a, b) => a + b;
@@ -48,10 +61,7 @@ function calculatorFunctions(e) {
 		});
 
 		//display user input
-		if (e.target.classList.contains('decimal') && display.value === '0' ||
-			 e.target.classList.contains('decimal') && display.value === firstNumber) {
-			display.value = '0' + e.target.textContent;
-		} else if (display.value === '0' || display.value === firstNumber) {
+		if (display.value === '0' || display.value === firstNumber) {
 			display.value = e.target.textContent;
 		} else {
 			display.value = display.value + e.target.textContent;

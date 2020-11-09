@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Brandi Cameron | hello@brandicameron.com">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="stylesheet" href="css/main.css">
+	<link id="stylesheet" rel="stylesheet" href="css/main.css">
 	<meta property="og:title" content="Super Cool Classic Calculator" />
 	<meta property="og:image" content="https://bc-portfolio.s3.amazonaws.com/calc-share.gif" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -18,9 +18,12 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#603cba">
 	<meta name="theme-color" content="#ffffff">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
+	
+	<button id="change-btn">Change Design</button>
 
 	<section class="calculator">
 		<input type="text" value="0" class="display">
@@ -40,7 +43,7 @@
 			<button class="number-button">3</button>
 			<button id="add-btn" class="operator-btn">&#43;</button>
 			<button class="zero number-button">0</button>
-			<button class="number-button decimal">.</button>
+			<button class="number-button">.</button>
 			<button id="equal-btn" class="equal">&#61;</button>
 		</div>
 	</section>

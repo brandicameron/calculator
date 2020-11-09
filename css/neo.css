@@ -5,20 +5,19 @@
 }
 
 :root {
-	--background-color: #fff;
-	--gradient-bg: linear-gradient(to bottom, rgb(184, 152, 252), rgb(107, 107, 255));
-	--text-color: #333;
+	--background-color: #f1f1f2;
+	--accent-color: #4242f4;
+	--text-color: #707071;
 }
 
 body {
-	background: var(--gradient-bg);
+	background: var(--background-color);
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	color: var(--text-color);
 }
 
 #change-btn {
@@ -28,20 +27,19 @@ body {
 	width: 100px;
 	padding: 0 20px;
 	font-size: 1rem;
-	border-radius: 0 0 0 30px;
-	box-shadow: none;
+	border-radius: 0 0 0 20px;
 	margin: 0;
 	cursor: pointer;
 }
 
 .calculator {
 	position: relative;
-	border: 4px solid var(--text-color);
-	border-radius: 20px;
+	border-radius: 30px;
 	padding: 40px 25px;
 	margin: 0 50px;
 	background: var(--background-color);
 	max-width: 350px;
+	box-shadow: 4px 4px 6px #c5c5c9, -2px -2px 6px #fff;
 }
 
 .calculator::after {
@@ -50,32 +48,35 @@ body {
 	width: 100%;
 	height: 100%;
 	border-radius: 20px;
-	background: url("https://bc-portfolio.s3.amazonaws.com/stripes.svg");
 	background-size: 8px;
 	left: 15px;
 	top: 15px;
 	z-index: -1;
 }
 
+button,
+input {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 200;
+	background: var(--background-color);
+	color: var(--text-color);
+	box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+	box-shadow: 4px 4px 6px #b8b9be, -2px -2px 6px #fff;
+}
+
 .display {
 	height: 110px;
 	width: 100%;
-	padding: 0 10px;
+	padding: 0 20px;
 	margin-bottom: 10px;
 	font-size: 5.5rem;
 	text-align: right;
+	border: none;
 	border-radius: 40px;
 }
 
 .display:focus {
 	outline: none;
-}
-
-button, 
-input {
-	font-family: 'Poppins', sans-serif;
-	color: var(--text-color);
-	border: 4px solid var(--text-color);
 }
 
 .buttons-container {
@@ -84,24 +85,25 @@ input {
 }
 
 button {
-	background: var(--background-color);
-	font-size: 2.6rem;
+	font-size: 2rem;
+	border: none;
 	line-height: 100%;
 	width: 65px;
 	height: 65px;
 	margin: 5px;
 	border-radius: 50%;
-	box-shadow: 5px 5px rgba(0 0 0 / 20%);
+	transition: all 100ms linear;
 }
 
 button:focus {
 	outline: none;
-	background: var(--gradient-bg);
+	background: var(--accent-color);
+	color: var(--background-color);
 }
 
 button:hover {
 	transform: scale(.98);
-	background: var(--gradient-bg);
+	background: var(--accent-color);
 	color: var(--background-color);
 }
 
@@ -123,8 +125,9 @@ button:active {
 }
 
 .is-depressed {
-	background: var(--gradient-bg);
+	background: var(--accent-color);
 	color: var(--background-color);
+	border: none;
 }
 
 @media screen and (max-width: 550px) {
