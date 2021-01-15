@@ -5,9 +5,9 @@
 }
 
 :root {
-	--background-color: #f1f1f2;
+	--background-color: #EBECF0;
 	--accent-color: #4242f4;
-	--text-color: #707071;
+	--text-color: #656565;
 }
 
 body {
@@ -60,8 +60,8 @@ input {
 	font-weight: 200;
 	background: var(--background-color);
 	color: var(--text-color);
-	box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
-	box-shadow: 4px 4px 6px #b8b9be, -2px -2px 6px #fff;
+	box-shadow: 4px 4px 6px #cbcbcb, -2px -2px 6px #fff;
+	text-shadow: 1px 1px 1px white;
 }
 
 .display {
@@ -105,6 +105,7 @@ button:hover {
 	transform: scale(.98);
 	background: var(--accent-color);
 	color: var(--background-color);
+	text-shadow: none;
 }
 
 button:active {
